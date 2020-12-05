@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Cadastrar Produto</h1>
+<div mat-dialog-content>
+  <p>Nome do produto:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="modalData.nome">
+  </mat-form-field>
+  <p>Preco do produto:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="modalData.preco">
+  </mat-form-field>
+  <p>Peso do produto:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="modalData.peso">
+  </mat-form-field>
+  <p>Quantidade do produto:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="modalData.quantidade">
+  </mat-form-field>
+  <p>Descrição do produto:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="modalData.value">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="modalData" cdkFocusInitial>Cadastrar</button>
+</div>

@@ -1,0 +1,39 @@
+<h1 mat-dialog-title>Cadastrar Cliente</h1>
+<div mat-dialog-content>
+  <p>Nome do Cliente:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="modalData.nome">
+  </mat-form-field>
+  <p>sobrenome:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="modalData.sobrenome">
+  </mat-form-field>
+  <p>CPF:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="modalData.cpf">
+  </mat-form-field>
+  <p>Telefone:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="modalData.telefone">
+  </mat-form-field>
+  <p>Endereço:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="modalData.endereco">
+  </mat-form-field>
+  <p>Endereço 2:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="modalData.endereco2">
+  </mat-form-field>
+  <p>Cidade:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="modalData.cidade">
+  </mat-form-field>  
+  <p>CEP:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="modalData.cep">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="modalData" cdkFocusInitial>Cadastrar</button>
+</div>

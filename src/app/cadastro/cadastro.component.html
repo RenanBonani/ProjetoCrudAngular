@@ -1,0 +1,100 @@
+<!--
+  <form class="example-form">
+    
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Sobrenome</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+    </tr></table>
+  
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>Endereço</mat-label>
+        <textarea matInput placeholder="Ex. rua 10"></textarea>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Endereço 2</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+    </p>
+  
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Cidade</mat-label>
+        <input matInput placeholder="Ex. Jales">
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Estado</mat-label>
+        <input matInput placeholder="Ex. São Paulo">
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Codigo Postal</mat-label>
+        <input matInput #postalCode maxlength="8" placeholder="Ex. 15700000">
+        <mat-hint align="end">{{postalCode.value.length}} / 8</mat-hint>
+      </mat-form-field></td>
+    </tr></table>
+
+  </form>
+-->
+
+<div class="container">
+  <button mat-raised-button color="primary" class="btn-space" (click)="insert()">Adicionar</button>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" width="100%">
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="sobrenome">
+      <th mat-header-cell *matHeaderCellDef> Sobrenome </th>
+      <td mat-cell *matCellDef="let element"> {{element.sobrenome}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cpf">
+      <th mat-header-cell *matHeaderCellDef> CPF </th>
+      <td mat-cell *matCellDef="let element"> {{element.cpf}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="telefone">
+      <th mat-header-cell *matHeaderCellDef> Telefone </th>
+      <td mat-cell *matCellDef="let element"> {{element.telefone}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="endereco">
+      <th mat-header-cell *matHeaderCellDef> Endereço </th>
+      <td mat-cell *matCellDef="let element"> {{element.endereco}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="endereco2">
+      <th mat-header-cell *matHeaderCellDef> Endereço 2 </th>
+      <td mat-cell *matCellDef="let element"> {{element.endereco2}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cidade">
+      <th mat-header-cell *matHeaderCellDef> Cidade </th>
+      <td mat-cell *matCellDef="let element"> {{element.cidade}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cep">
+      <th mat-header-cell *matHeaderCellDef> CEP </th>
+      <td mat-cell *matCellDef="let element"> {{element.cep}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="functions">
+      <th mat-header-cell *matHeaderCellDef> Ações. </th>
+      <td mat-cell *matCellDef="let element">
+        <button (click)="edit(element)" mat-raised-button color="primary">Alterar</button>
+        <button (click)="delete(element.key)" mat-raised-button color="warn">Excluir</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</div>
